@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Супер тест</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		html, body { 
+			height: 100%; 
+			width: 100%; 
+			margin: 0; 
+			font-size:100%;
+		}
+
+		.q_cnt {
+			font: 15pt sans-serif;
+		    color: #228B22;
+		}
+
+		.question {
+			font: 15em sans-serif;
+		    color: black;
+		}
+
+		.question_img {
+		    height: 50%;
+		}
+
+		.accordion {
+			top: 1em;
+    		position: relative;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+		}
+
+		.question_block {
+			width: 85%;
+		    left: 7%;
+		    position: relative;
+		    top: 2em;
+		}
+
+		button.knopka {
+			color: #228B22;
+		    padding: 5px;
+		    border-radius: 5px;
+		    border: 2px solid gray;
+		    left: 5%;
+		    bottom: 10px;
+		    position: relative;
+		} 
+			button.knopka:hover { 
+			background: gray; 
+		}
+
+		.white_back{
+			height: 100%;
+		    position: relative;
+		    background-color: white;
+		    border-radius: 20px;
+		    top: 1em;
+		    margin: auto;
+		    border: 3px solid #C0C0C0;
+		}
+
+	</style>
+
+	
+</head>
+<body style="background-color: white">
+	<div style="">
+		<div style="color: #1E843A;
+				    left: 44%;
+				    position: fixed;
+				    width: 30%;
+				    height: 1em;
+				    top: 1em;
+				    z-index: 999;" class="site_name">
+			Наука Сибири
+		</div>
+	</div>
+	<div style="background-color: white;
+			    z-index: 900;
+			    width: 100%;
+			    height: 3em;
+			    position: fixed;"></div>
+	<div style="background-color: #ECECEA;
+				height: 100%;
+    			max-height: 90%;
+			    width: 98%;
+			    left: 1%;
+			    top: 3em;
+			    border-radius: 20px;
+			    position: absolute;">
+		
+		<div class="white_back">
+
+			<div class="question_block">
+				<div class="q_cnt">
+					Загрузка...
+				</div>
+
+				<div class="question">
+					Загрузка...
+				</div>
+
+
+				<div class="question_img">
+					<img id="q_img" style="max-width: 100%;" src="">
+					<div class="im_href" style="font-size: 10px; color: gray;
+}"></div>
+				</div>
+
+				<div class="accordion">
+
+				    <div class="trigger">
+				        <input type="checkbox" id="checkbox-1" name="checkbox-1" onclick="block_checkboxes()" />
+				        <label for="checkbox-1" class="checkbox">
+				            Вариант 1 
+				        </label>
+				        <div class="content">
+				            <h3>Gary Busey 2020!</h3>
+
+				            <p>ответ отличный, но не верный</p>
+
+				            <button class="knopka" onclick="unblock_checkboxes()">Далее</button>
+				        </div>
+				    </div>
+				    
+				    <div class="trigger">
+				        <input type="checkbox" id="checkbox-2" name="checkbox-2" onclick="block_checkboxes()" />
+				        <label for="checkbox-2" class="checkbox">
+				            Вариант 2
+				        </label>
+				        <div class="content">
+				            <h3>Gary Busey 2020!</h3>
+
+				            <p>уже лучше</p>
+
+				            <button class="knopka" onclick="unblock_checkboxes()">Далее</button>
+				        </div>
+				    </div>
+				    
+				    <div class="trigger">
+				        <input type="checkbox" id="checkbox-3" name="checkbox-3" onclick="block_checkboxes()" />
+				        <label for="checkbox-3" class="checkbox">
+				            Вариант 3
+				        </label>
+				        <div class="content">
+				            <h3>Gary Busey 2020!</h3>
+
+				            <p>ваще супер маладца</p>
+
+				            <button class="knopka" onclick="unblock_checkboxes()">Далее</button>
+				        </div>
+				    </div>
+
+				    <div class="trigger">
+				        <input type="checkbox" id="checkbox-4" name="checkbox-4" onclick="block_checkboxes()" />
+				        <label for="checkbox-4" class="checkbox">
+				            Вариант 4
+				        </label>
+				        <div class="content">
+				            <h3>Gary Busey 2020!</h3>
+
+				            <p>отстойный ответ</p>
+
+				            <button class="knopka" onclick="unblock_checkboxes()">Далее</button>
+				        </div>
+				    </div>
+				</div>
+			
+			</div>
+
+		</div>
+
+		
+	</div>
+			
+				
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script type="text/javascript">
+
+$('.white_back').width($('.white_back').height()*0.6);
+
+document.getElementsByClassName("question")[0].style.fontSize = (window.innerHeight * 0.03) + 'px';
+
+document.getElementsByClassName("q_cnt")[0].style.fontSize = (window.innerHeight * 0.03) + 'px';
+
+var css = 'h3 { font-size: '+(window.innerHeight * 0.03) + 'px; }',
+head = document.head || document.getElementsByTagName('head')[0],
+style = document.createElement('style');
+head.appendChild(style);
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+var css = 'p { font-size: '+(window.innerHeight * 0.02) + 'px; }',
+head = document.head || document.getElementsByTagName('head')[0],
+style = document.createElement('style');
+head.appendChild(style);
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+var css = 'button { font-size: '+((window.innerHeight * 0.05) - 30) + 'px; }',
+head = document.head || document.getElementsByTagName('head')[0],
+style = document.createElement('style');
+head.appendChild(style);
+style.type = 'text/css';
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+for (var i in document.getElementsByClassName("checkbox")){
+	try {
+		document.getElementsByClassName("checkbox")[i].style.fontSize = (window.innerHeight * 0.05) - 30 + 'px';
+	} catch(err) {}
+};
+
+$(window).resize(function(){
+	$('.white_back').width($('.white_back').height()*0.6);
+
+    document.getElementsByClassName("question")[0].style.fontSize = (window.innerHeight * 0.03) + 'px';
+
+    document.getElementsByClassName("q_cnt")[0].style.fontSize = (window.innerHeight * 0.03) + 'px';
+
+    var css = 'h3 { font-size: '+(window.innerHeight * 0.03) + 'px; }',
+	head = document.head || document.getElementsByTagName('head')[0],
+	style = document.createElement('style');
+	head.appendChild(style);
+	style.type = 'text/css';
+	if (style.styleSheet){
+	  style.styleSheet.cssText = css;
+	} else {
+	  style.appendChild(document.createTextNode(css));
+	}
+
+	var css = 'p { font-size: '+(window.innerHeight * 0.02) + 'px; }',
+	head = document.head || document.getElementsByTagName('head')[0],
+	style = document.createElement('style');
+	head.appendChild(style);
+	style.type = 'text/css';
+	if (style.styleSheet){
+	  style.styleSheet.cssText = css;
+	} else {
+	  style.appendChild(document.createTextNode(css));
+	}
+
+	var css = 'button { font-size: '+((window.innerHeight * 0.05) - 30) + 'px; }',
+	head = document.head || document.getElementsByTagName('head')[0],
+	style = document.createElement('style');
+	head.appendChild(style);
+	style.type = 'text/css';
+	if (style.styleSheet){
+	  style.styleSheet.cssText = css;
+	} else {
+	  style.appendChild(document.createTextNode(css));
+	}
+
+	for (var i in document.getElementsByClassName("checkbox")){
+		try {
+			document.getElementsByClassName("checkbox")[i].style.fontSize = (window.innerHeight * 0.05) - 30 + 'px';
+		} catch(err) {}
+	};
+});
+
+var photo_src_show = true;
+
+var current_q = 'start';
+var next_q = '';
+
+var user_score = 0;
+var q_cnt = 0;
+var all_q_cnt = 0;
+
+var qs = '';
+load_qs();
+
+function load_qs(){
+
+	var res = $.post('index.php',{current_q: 'q1'}).done(function(data){
+
+		qs = JSON.parse(data);
+		all_q_cnt = Object.keys(qs).length - 2;
+		init_q();
+
+	});
+}
+
+function init_q(){
+
+	$('.q_cnt')[0].innerText = 'Предисловие';
+
+    $('.question')[0].innerHTML = qs[current_q]['text'];
+
+    $('#q_img').attr("src", qs[current_q]['image']);
+    if (photo_src_show) {$('.im_href')[0].innerText = 'фото: ' + qs[current_q]['image'];}
+
+    $('.accordion')[0].innerHTML = '<div class="trigger"><input type="checkbox" id="checkbox-1" name="checkbox-1" onclick="load_q()" /><label for="checkbox-1" class="checkbox"> Начать! </label> </div>';
+    document.getElementsByClassName("checkbox")[0].style.fontSize = (window.innerHeight * 0.05) - 30 + 'px';
+
+	next_q = qs[current_q]['next'];
+}
+
+function load_q(){
+
+	q_cnt += 1;
+
+	if (next_q != 'answer'){
+		if (current_q == 'start') {
+			$('.q_cnt')[0].innerText = 'Предисловие';
+
+			$('.question')[0].innerHTML = qs['start'][user_score];
+
+			$('#q_img').attr("src", qs['start']['image']);
+			if (photo_src_show) {$('.im_href')[0].innerText = 'фото: ' + qs['start']['image'];}
+
+			$('.accordion')[0].innerHTML = '<div class="trigger"><input type="checkbox" id="checkbox-1" name="checkbox-1" onclick="block_checkboxes()" /><label for="checkbox-1" class="checkbox"> Вариант 1 </label> <div class="content"> <h3>Gary Busey 2020!</h3> <p>ответ отличный, но не верный</p> <button class="knopka" onclick="unblock_checkboxes()">Далее</button> </div> </div> <div class="trigger"> <input type="checkbox" id="checkbox-2" name="checkbox-2" onclick="block_checkboxes()" /> <label for="checkbox-2" class="checkbox"> Вариант 2 </label> <div class="content"> <h3>Gary Busey 2020!</h3> <p>уже лучше</p> <button class="knopka" onclick="unblock_checkboxes()">Далее</button> </div> </div> <div class="trigger"> <input type="checkbox" id="checkbox-3" name="checkbox-3" onclick="block_checkboxes()" /> <label for="checkbox-3" class="checkbox"> Вариант 3 </label> <div class="content"> <h3>Gary Busey 2020!</h3> <p>ваще супер маладца</p> <button class="knopka" onclick="unblock_checkboxes()">Далее</button> </div> </div> <div class="trigger"> <input type="checkbox" id="checkbox-4" name="checkbox-4" onclick="block_checkboxes()" /> <label for="checkbox-4" class="checkbox"> Вариант 4 </label> <div class="content"> <h3>Gary Busey 2020!</h3> <p>отстойный ответ</p> <button class="knopka" onclick="unblock_checkboxes()">Далее</button> </div> </div>';
+			for (var i in document.getElementsByClassName("checkbox")){
+				try {
+					document.getElementsByClassName("checkbox")[i].style.fontSize = (window.innerHeight * 0.05) - 30 + 'px';
+				} catch(err) {}
+			};
+		}
+
+		$('.q_cnt')[0].innerText = q_cnt + '/' + all_q_cnt;
+
+	    $('.question')[0].innerHTML = qs[next_q]['text'];
+
+	    $('#q_img').attr("src", qs[next_q]['image']);
+	    if (photo_src_show) {$('.im_href')[0].innerText = 'фото: ' + qs[next_q]['image'];}
+
+	    for (var i in $('.checkbox')){
+	    	try{
+				$('.checkbox')[i].innerText = qs[next_q]['var_' + (Number(i) + 1)]['label'];
+				$('.content')[i].innerHTML = '<br/>' + qs[next_q]['var_' + (Number(i) + 1)]['text'] + '<button class="knopka" onclick="unblock_checkboxes()">Далее</button>';
+			} catch(err) {}
+		}
+
+		current_q = next_q;
+		next_q = qs[current_q]['next'];
+	} else {
+		if (next_q == 'answer') {
+			$('.q_cnt')[0].innerText = 'Итоги';
+
+			$('.question')[0].innerHTML = 'Вы набрали ' + user_score + ' из ' + all_q_cnt + '<br/>' + qs['answer'][user_score]['text'];
+
+			$('#q_img').attr("src", qs['answer'][user_score]['image']);
+			if (photo_src_show) {$('.im_href')[0].innerText = 'фото: ' + qs['answer'][user_score]['image'];}
+
+			$('.accordion')[0].innerHTML = '';
+		}
+	}
+}
+
+
+function block_checkboxes() {
+	console.log(current_q);
+    var masterCheckbox = document.querySelector('input[type="checkbox"][value="0"]');
+	var slaveCheckboxes = document.querySelectorAll('input[type="checkbox"]:not([value="0"])');
+    Array.prototype.forEach.call(slaveCheckboxes, function(checkbox) {
+        checkbox.disabled = true;
+    });
+
+    checked_var = Number(document.querySelector('input[type="checkbox"]:checked').name.split('-')[1])
+
+
+    if (checked_var == qs[current_q]['true']) {
+    	user_score += 1;
+    	$('.checkbox')[checked_var-1].style['color'] = 'greenyellow';
+    } else {
+    	$('.checkbox')[qs[current_q]['true']-1].style['color'] = 'greenyellow';
+    	$('.checkbox')[checked_var-1].style['color'] = 'orangered';
+    }
+
+	$.post('index.php',{checked_name: checked_var, q: current_q}).done(function(data){
+		console.log(data)
+		var statistic = JSON.parse(data);
+	    console.log(statistic);
+	    if (statistic[current_q]['cnt'] == 0){
+	    	norm = 1
+	    } else {
+	    	norm = statistic[current_q]['cnt']
+	    }
+	    for (var i in $('.checkbox')){
+			$('.checkbox')[i].innerText += '\t' + Math.floor(100 * statistic[current_q][Number(i) + 1] / norm) + '%';
+		}
+	});
+}
+
+
+function unblock_checkboxes() {
+    var masterCheckbox = document.querySelector('input[type="checkbox"][value="0"]');
+	var slaveCheckboxes = document.querySelectorAll('input[type="checkbox"]:not([value="0"])');
+    Array.prototype.forEach.call(slaveCheckboxes, function(checkbox) {
+        checkbox.checked = false;
+        checkbox.disabled = false;
+    });
+    for (var i in $('.checkbox')){
+    	try {
+			$('.checkbox')[i].style['color'] = 'white';
+		} catch(err) {}
+	}
+
+    load_q();
+}
+
+</script>
+
+</body>
+</html>

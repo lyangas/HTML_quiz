@@ -1,0 +1,41 @@
+{
+"start":{
+	"text":"О, да. время большого мозга. Но справишься ли ты?",
+	"image":"https://ic.pics.livejournal.com/sergeeffff/34028062/116402/116402_800.jpg",
+	"next":"q1"
+	},
+"q1":{
+	"text":"есть два стула. какой выберешь?",
+	"image":"https://pbs.twimg.com/media/D4EK3A-XoAEnmtN.jpg",
+	"var_1":{"label":"первый","text":"<h3>а вы эстет!</h3><p>хотя, а как могло быть иначе... ну да, никак! :-)</p>"},
+	"var_2":{"label":"второй","text":"<h3>о, кто-то окончивший НГУ</h3>"},
+	"var_3":{"label":"оба","text":"<h3>ну ты машина</h3>"},
+	"var_4":{"label":"никакой","text":"<h3>а ты скромняшка</h3>"},
+	"true":"3",
+	"next":"q2"
+	},
+"q2":{
+	"text":"еще раз подумай. есть два стула. какой выберешь?",
+	"image":"https://s00.yaplakal.com/pics/pics_original/9/3/9/14066939.jpg",
+	"var_1":{"label":"первый","text":"<h3>а вы эстет!</h3>"},
+	"var_2":{"label":"второй","text":"<h3>о, кто-то окончивший НГУ</h3>"},
+	"var_3":{"label":"оба","text":"<h3>ну ты машина</h3>"},
+	"var_4":{"label":"никакой","text":"<h3>а ты скромняшка</h3>"},
+	"true":"4",
+	"next":"answer"
+	},
+"answer":{
+	"0":{
+		"text":"ха, лох",
+		"image":"https://businessman.ru/static/img/n/6/1/4/0/3/7/i/614037.jpg"
+		},
+	"1":{
+		"text":"не плохо",
+		"image":"https://businessman.ru/static/img/n/6/1/4/0/3/7/i/614037.jpg"
+		},
+	"2":{
+		"text":"ай красава!",
+		"image":"https://pp.userapi.com/c626922/u171372979/video/y_46abf61d.jpg"
+		}
+	}
+}
